@@ -33,9 +33,11 @@ public class Exercises {
                 """;
 
         try {
-           //Files.createFile(MY_PATH); L'ho dovuto commentare altrimenti generava errori
+          if(!Files.exists(MY_PATH))   {
+              Files.createFile(MY_PATH);
+          }
 
-           Files.writeString(MY_PATH,myString);//Dove cazzo sta?
+          Files.writeString(MY_PATH,myString);
 
 
         } catch (Exception exception) {
@@ -131,7 +133,8 @@ public class Exercises {
         Path myDirectoryPath = Path.of("mydirectory");
 
         try {
-            Files.createDirectory(myDirectoryPath);                                                                               // Your code
+            if(Files.exists(myDirectoryPath)){
+                Files.createDirectory(myDirectoryPath);}
             Files.writeString(PATH_IN_A_FOLDER, "Why am I in a folder?");
         } catch (Exception exception) {
             System.err.println("There was an error!");
