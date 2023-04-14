@@ -24,6 +24,7 @@ public class Exercises {
             Files.createFile(Path.of("Test.txt"));
         } catch (Exception exception) {
             exception.printStackTrace();
+            System.exit(0);
         }
     }
 
@@ -45,6 +46,7 @@ public class Exercises {
             } catch (IOException ioException) {
 
                 System.err.println("File could not exist");
+                System.exit(0);
 
             }
         }
@@ -65,6 +67,7 @@ public class Exercises {
             } catch (Exception exception){
 
                 System.err.println("Not valid integer");
+                System.exit(0);
 
             }
         }
