@@ -20,7 +20,18 @@ class CalculatorTest {
     @Test
     void exercise1() {
         System.out.println("\nExercise 1: ");
-        // Your code here
+        Double num1=3.8;
+        Double num2=4.7;
+        Double num3=-34.2;
+        Double zero=0.0;
+        Calculator add_subtract = new Calculator();
+
+        add_subtract.add(num1,num2);
+        add_subtract.add(num1,zero);
+        add_subtract.subtract(zero,num3);
+        add_subtract.subtract(num2,num3);
+
+
     }
 
     /**
@@ -37,10 +48,20 @@ class CalculatorTest {
     @Test
     void exercise2() {
         System.out.println("\nExercise 2: ");
-        // Your code here
 
+        Double num1=3.8;
+        Double num2=4.7;
+        Double num3=-34.2;
+        Double zero=0.0;
         Calculator calculator = new Calculator();
-        Assertions.assertThrows(ArithmeticException.class, () -> calculator.divide(10, 0));
+
+        calculator.multiply(num1,num2);
+        calculator.multiply(num1,zero);
+        calculator.divide(zero,num3);
+        calculator.divide(num2,num3);
+
+
+        Assertions.assertThrows(ArithmeticException.class, () -> calculator.divide(10.0, 0.0));
     }
 
     /**
@@ -58,6 +79,21 @@ class CalculatorTest {
     @Test
     void exercise3() {
         System.out.println("\nExercise 3: ");
-        // Your code here
+
+        Double num1=3.8;
+        Double num2=4.7;
+        Double num3=-34.2;
+        Double zero=0.0;
+
+        Calculator calculator = new Calculator();
+
+        calculator.power(num1,num2);
+        calculator.power(num1,zero);
+        calculator.power(zero,num3);
+        calculator.power(num2,num3);
+
+
+
+
     }
 }
